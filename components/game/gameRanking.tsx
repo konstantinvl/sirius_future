@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { BUTTON_TYPES } from '../common/renderData';
+import { BUTTON_TYPES } from '../../common/renderData';
 
 function GameRankingRC(props: { className?: string; ranking: BUTTON_TYPES }): JSX.Element {
   const { className, ranking } = props;

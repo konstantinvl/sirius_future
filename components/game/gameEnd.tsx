@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import StartButton from './startButton';
+import StartButton from '../startButton';
 
 function GameEndRC(props: { className?: string; show: boolean; onClick: () => void }): JSX.Element {
   const { className, show, onClick } = props;

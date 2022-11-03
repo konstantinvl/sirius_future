@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { GameElementProps } from '../../common/interfaces';
-import { GAME_BACKGROUND_COLORS } from '../../common/renderData';
+import { GameElementProps } from '../../../common/interfaces';
+import { GAME_BACKGROUND_COLORS } from '../../../common/renderData';
 
 const GameBackground = styled('div')<GameElementProps>`
   width: 100%;

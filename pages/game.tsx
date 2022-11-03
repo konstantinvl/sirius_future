@@ -1,22 +1,21 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import styled from '@emotion/styled';
-import SliderInput from '../components/sliderInput';
-import { RENDER_DATA, BUTTON_TYPES } from '../common/renderData';
-import StatusButton from '../components/statusButton';
-import GameToken from '../components/gameToken';
+
+import { BUTTON_TYPES } from '../common/renderData';
+import GameToken from '../components/game/gameToken';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import GameDrop from '../components/elements/gameDrop';
+import GameDrop from '../components/game/elements/gameDrop';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { getRandomNumber, sortArray } from '../common/getRandom';
-import GameBackground from '../components/elements/gameBackground';
-import GameField from '../components/elements/gameField';
-import GameTokenField from '../components/elements/gameTokenField';
-import GameDropWrapper from '../components/elements/gameDropWrapper';
+import GameBackground from '../components/game/elements/gameBackground';
+import GameField from '../components/game/elements/gameField';
+import GameTokenField from '../components/game/elements/gameTokenField';
+import GameDropWrapper from '../components/game/elements/gameDropWrapper';
 import { useRouter } from 'next/router';
-import GameRanking from '../components/gameRanking';
+import GameRanking from '../components/game/gameRanking';
 import { setGame } from '../store/game/gameActions';
-import GameEnd from '../components/gameEnd';
+import GameEnd from '../components/game/gameEnd';
 
 function GameRC(props: { className?: string }): JSX.Element {
   const { className } = props;

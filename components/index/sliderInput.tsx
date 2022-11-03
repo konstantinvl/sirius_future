@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import { SliderInterface } from '../common/interfaces';
+import { SliderInterface } from '../../common/interfaces';
 
 function SliderInputRC(props: {
   value: number;

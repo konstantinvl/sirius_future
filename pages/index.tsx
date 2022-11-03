@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import SliderInput from '../components/sliderInput';
+import SliderInput from '../components/index/sliderInput';
 import { RENDER_DATA, BUTTON_TYPES } from '../common/renderData';
-import StatusButton from '../components/statusButton';
+import StatusButton from '../components/index/statusButton';
 import { GameSets } from '../common/gameSets';
 import { useAppDispatch } from '../store/hooks';
 import { setGame } from '../store/game/gameActions';
 import { useRouter } from 'next/router';
 import StartButton from '../components/startButton';
+import IndexWrapperBackground from '../components/index/elements/indexWrapperBackground';
+import IndexWrapper from '../components/index/elements/indexWrapper';
+import IndexRankingWrapper from '../components/index/elements/indexRankingWrapper';
 
 function IndexRC(props: { className?: string }) {
   const { className } = props;
@@ -31,8 +34,8 @@ function IndexRC(props: { className?: string }) {
 
   return (
     <div className={className}>
-      <div className='index_wrapper-background'>
-        <div className='index_wrapper'>
+      <IndexWrapper>
+        <IndexWrapperBackground>
           <SliderInput
             value={quantityValue}
             setValue={setQuantityValue}
@@ -45,7 +48,7 @@ function IndexRC(props: { className?: string }) {
             data={RENDER_DATA.valueSlider}
             width='80%'
           />
-          <div className='index_ranking_wrapper'>
+          <IndexRankingWrapper>
             <StatusButton
               type={BUTTON_TYPES.ASCENDING}
               value={rankingValue}
@@ -58,10 +61,10 @@ function IndexRC(props: { className?: string }) {
               onClick={() => setRankingValue(BUTTON_TYPES.DESCENDEING)}
               label='По убыванию'
             />
-          </div>
+          </IndexRankingWrapper>
           <StartButton label='Играть' onClick={startGame} />
-        </div>
-      </div>
+        </IndexWrapperBackground>
+      </IndexWrapper>
     </div>
   );
 }
@@ -75,30 +78,6 @@ const Index = styled(IndexRC)`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  & > .index_wrapper-background {
-    width: 100%;
-    max-width: 700px;
-    padding: 20px;
-    background: linear-gradient(198.7deg, #7f75f0 -40.43%, #101f32 95.81%);
-    border-radius: 40px;
-  }
-  & .index_wrapper {
-    background: #ffffff;
-    border-radius: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  & .index_ranking_wrapper {
-    margin-top: 72px;
-    display: flex;
-    width: 80%;
-    justify-content: space-between;
-    &:hover {
-      cursor: pointer;
-    }
-  }
 `;
 
 export default Index;
