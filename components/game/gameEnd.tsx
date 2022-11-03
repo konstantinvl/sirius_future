@@ -9,7 +9,8 @@ function GameEndRC(props: { className?: string; show: boolean; onClick: () => vo
     <>
       {show && (
         <div className={className}>
-          <span>Победа</span>
+          <span className='win'>Победа</span>
+          <span className='awesome'>Молодец! Ты успешно справился с заданием!</span>
           <StartButton label='Заново' onClick={onClick} />
         </div>
       )}
@@ -30,7 +31,7 @@ const GameEnd = styled(GameEndRC)`
   align-items: center;
   padding: 40px;
   z-index: 999;
-  & > span {
+  & .win {
     font-family: 'Circe Rounded Alt ';
     font-style: normal;
     font-weight: 400;
@@ -44,6 +45,18 @@ const GameEnd = styled(GameEndRC)`
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
+  }
+  & .awesome {
+    font-family: 'Circe Rounded';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 51px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #5f40a1;
   }
 `;
 
